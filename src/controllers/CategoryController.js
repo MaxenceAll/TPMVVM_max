@@ -1,8 +1,13 @@
 export class CategoryController{
 
+    constructor(params){
+        this.categoryName = params.pop()?.replace('-', ' ');
+    }
+
     async execute(){
-        const resp = await fetch('http://tpmvvm.loc/src/views/CategoryView.html');
-        const view = await resp.text();
-        return view;
+        const {CategoryView} = await import('../views/CategoryView.js');
+        const view = new CategoryView(this.categoryName);
+        const content = view.render();
+        return content;
     }
 }

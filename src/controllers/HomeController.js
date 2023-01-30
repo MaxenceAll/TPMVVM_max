@@ -1,8 +1,10 @@
 export class HomeController{
 
     async execute(){
-        const resp = await fetch('http://tpmvvm.loc/src/views/HomeView.html');
-        const view = await resp.text();
-        return view;
+        const {HomeView} = await import('../views/HomeView.js');
+        const view = new HomeView();
+        const content = view.render();
+        return content;
+        
     }
 }
