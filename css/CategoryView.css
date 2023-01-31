@@ -1,18 +1,3 @@
-body{
-    background: radial-gradient(circle, rgb(175, 244, 247) 0%, rgb(252, 252, 252) 100%, rgb(255, 255, 255) 0%);
-}
-
-.card{
-    background-color: rgba(172, 172, 172, 0.652);
-}
-.card p{
-    color: white;
-    height: 20vh;
-}
-.card:hover{
-    cursor: pointer;
-}
-
 @import 'https://fonts.googleapis.com/css?family=Inconsolata';
 
 html {

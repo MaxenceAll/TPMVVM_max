@@ -19,7 +19,11 @@ export class CategoryView {
 
       return `
         <div id="CategoryDetailView">
-            <h1>Vous êtes sur la catégorie : ${this.categoryName}</h1>
+
+          <link rel="stylesheet" href="../css/CategoryView.css">
+
+          <h1>Vous êtes sur la catégorie : ${this.categoryName}</h1>
+
         </div>
         `;
     };
