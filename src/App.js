@@ -13,6 +13,18 @@ export class App{
     }
 
     static start = () => {
+        
+        document.getElementById("root").innerHTML = `
+        <div id="spinner" class="d-flex justify-content-center">
+            <div class="spinner-border justify-content-center" style="width: 15rem; height: 15rem;" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>  
+        </div>      
+        `;
+
+        let bp = true;
+        
+
         window.onload = async () => { 
             // on prend le pathname complet (donc en fonction du lien sur lequel on clique cela change).
             const route = location.pathname;
@@ -32,6 +44,7 @@ export class App{
             const controller = new ControllerClass(routeItems);
             console.log(controller);
             const vm = await controller.execute();
+
             document.getElementById("root").innerHTML = vm;
         }
     }

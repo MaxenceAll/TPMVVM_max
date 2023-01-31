@@ -1,30 +1,26 @@
 export class CategoryView {
   
-    constructor(categoryName) {
-      this.categoryName = categoryName;
+    constructor(theme,products) {
+      this.theme = theme;
+      this.products = products;
     }
   
     render = () => {
 
-
-        switch (this.categoryName) {
-            case "europe": this.categoryName = "européen."; break;
-            case "asia": this.categoryName = "asiatique."; break;
-            case "africa": this.categoryName = "africain."; break;
-            case "americas": this.categoryName = "américain."; break;
-            case "oceania": this.categoryName = "océanique."; break;
-        
-            default: break;
-        }
+      
 
       return `
-        <div id="CategoryDetailView">
+      <div id="CategoryDetailView">
 
-          <link rel="stylesheet" href="../css/CategoryView.css">
+      <link rel="stylesheet" href="../css/CategoryView.css">
 
-          <h1>Vous êtes sur la catégorie : ${this.categoryName}</h1>
+      <h1>Vous êtes sur la catégorie : ${this.theme.title}</h1>
 
-        </div>
-        `;
+      <p>
+        ${this.products}
+      </p>
+
+      </div>
+      `;
     };
   }

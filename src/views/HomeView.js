@@ -24,7 +24,7 @@ export class HomeView {
                         <div class="card-body">
                         <h5 class="card-title">Europe</h5>
                         <p class="card-text">Lorem ipsum dolor sit amet.</p>
-                        <a href="/category/europe" class="btn btn-success">Voir cette catégorie</a>
+                        <a href="/category/EuroPe" class="btn btn-success">Voir cette catégorie</a>
                         </div>
                     </div>
                 </div>
@@ -35,7 +35,7 @@ export class HomeView {
                         <div class="card-body">
                         <h5 class="card-title">Asie</h5>
                         <p class="card-text">Lorem ipsum dolor sit amet.</p>
-                        <a href="/category/asia" class="btn btn-success">Voir cette catégorie</a>
+                        <a href="/category/Asie" class="btn btn-success">Voir cette catégorie</a>
                         </div>
                     </div>
                 </div>
@@ -46,7 +46,7 @@ export class HomeView {
                         <div class="card-body">
                         <h5 class="card-title">Afrique</h5>
                         <p class="card-text">Lorem ipsum dolor sit amet.</p>
-                        <a href="/category/africa" class="btn btn-success">Voir cette catégorie</a>
+                        <a href="/category/Afrique" class="btn btn-success">Voir cette catégorie</a>
                         </div>
                     </div>
                 </div>
@@ -57,7 +57,7 @@ export class HomeView {
                         <div class="card-body">
                         <h5 class="card-title">Amérique</h5>
                         <p class="card-text">Lorem ipsum dolor sit amet.</p>
-                        <a href="/category/americas" class="btn btn-success">Voir cette catégorie</a>
+                        <a href="/category/Amerique" class="btn btn-success">Voir cette catégorie</a>
                         </div>
                     </div>
                 </div>
@@ -68,7 +68,7 @@ export class HomeView {
                         <div class="card-body">
                         <h5 class="card-title">Océanie</h5>
                         <p class="card-text">Lorem ipsum dolor sit amet.</p>
-                        <a href="/category/oceania" class="btn btn-success">Voir cette catégorie</a>
+                        <a href="/category/Oceanie" class="btn btn-success">Voir cette catégorie</a>
                         </div>
                     </div>
                 </div>
