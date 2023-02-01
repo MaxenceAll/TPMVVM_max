@@ -6,13 +6,23 @@ export class ProductController{
 
     async execute(){
         //Models
-        let resp = await fetch("../src/data/product.json");
+        // let resp = await fetch("../src/data/product.json");
+        // const products = await resp.json();
+        // const product = products.find(p => p.id == this.id);
+        //via ddb
+        let resp = await fetch ("http://localhost:5000/product")
         const products = await resp.json();
         const product = products.find(p => p.id == this.id);
 
-        resp = await fetch("../src/data/theme.json");
+
+        // resp = await fetch("../src/data/theme.json");
+        // const themes = await resp.json();
+        // const theme = themes.find(t => t.id == product.theme_id);
+        //via ddb
+        resp = await fetch("http://localhost:5000/theme");
         const themes = await resp.json();
         const theme = themes.find(t => t.id == product.theme_id);
+
 
         //View
         const {ProductView} = await import('../views/ProductView.js');
