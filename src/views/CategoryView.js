@@ -90,18 +90,4 @@ export class CategoryView {
         `;
   };
 
-  //   return `
-  //   <div id="CategoryDetailView">
-
-  //   <link rel="stylesheet" href="../css/CategoryView.css">
-
-  //   <h1>Vous êtes sur la catégorie : ${this.category.title}</h1>
-
-  //   <p>
-  //     ${this.products}
-  //   </p>
-
-  //   </div>
-  //   `;
-  // };
 }

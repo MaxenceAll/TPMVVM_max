@@ -1,13 +1,37 @@
 export class HomeView {
 
-    formSubmit(event){
-        event.preventDefault();
-        console.log(event);
-    }
-
+    constructor(models) {
+        this.models = models;
+      }
 
     render = () =>
     {
+
+        const { categories } = this.models;
+
+        const categoriesCard = categories
+        .map((cat) => {
+          return `
+  
+  
+            <div class="col">
+                <div class="card" style="width: 10rem;">
+                    <img src="../img/${cat.img_src}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">${cat.title.toUpperCase()}</h5>
+                        <p class="card-text">${cat.description}</p>
+                        <a href="/category/${cat.title}" class="btn btn-success">Voir cette catégorie</a>
+                    </div>
+                </div>
+            </div>
+  
+          
+          `;
+        })
+        .join("");
+
+
+
         return `
         
         <div id="HomeView">
@@ -21,62 +45,31 @@ export class HomeView {
      
             <div class="row px-5 justify-content-center">
     
-                <div class="col">
-                    <div class="card" style="width: 10rem;">
-                        <img src="../img/Europe.svg.png" class="card-img-top" alt="...">
-                        <div class="card-body">
-                        <h5 class="card-title">Europe</h5>
-                        <p class="card-text">Lorem ipsum dolor sit amet.</p>
-                        <a href="/category/EuroPe" class="btn btn-success">Voir cette catégorie</a>
-                        </div>
-                    </div>
-                </div>
-    
-                <div class="col">
-                    <div class="card" style="width: 10rem;">
-                        <img src="../img/Asia.svg.png" class="card-img-top" alt="...">
-                        <div class="card-body">
-                        <h5 class="card-title">Asie</h5>
-                        <p class="card-text">Lorem ipsum dolor sit amet.</p>
-                        <a href="/category/Asie" class="btn btn-success">Voir cette catégorie</a>
-                        </div>
-                    </div>
-                </div>
-    
-                <div class="col">
-                    <div class="card" style="width: 10rem;">
-                        <img src="../img/Africa.svg.png" class="card-img-top" alt="...">
-                        <div class="card-body">
-                        <h5 class="card-title">Afrique</h5>
-                        <p class="card-text">Lorem ipsum dolor sit amet.</p>
-                        <a href="/category/Afrique" class="btn btn-success">Voir cette catégorie</a>
-                        </div>
-                    </div>
-                </div>
-    
-                <div class="col">
-                    <div class="card" style="width: 10rem;">
-                        <img src="../img/Americas.svg.png" class="card-img-top" alt="...">
-                        <div class="card-body">
-                        <h5 class="card-title">Amérique</h5>
-                        <p class="card-text">Lorem ipsum dolor sit amet.</p>
-                        <a href="/category/Amerique" class="btn btn-success">Voir cette catégorie</a>
-                        </div>
-                    </div>
-                </div>
-    
-                <div class="col">
-                    <div class="card" style="width: 10rem;">
-                        <img src="../img/Oceania.svg.png" class="card-img-top" alt="...">
-                        <div class="card-body">
-                        <h5 class="card-title">Océanie</h5>
-                        <p class="card-text">Lorem ipsum dolor sit amet.</p>
-                        <a href="/category/Oceanie" class="btn btn-success">Voir cette catégorie</a>
-                        </div>
-                    </div>
-                </div>
+                ${categoriesCard}
     
             </div>
+
+        <div class="container m-5">
+            <div> <u>Ajout de catégorie :</u>
+            <form id="addCategoryForm">
+              <div class="mb-3">
+                <label for="addCategoryForm_title" class="form-label">Nom de la catégorie :</label>
+                <input name ="title" type="text" class="form-control" id="addCategoryForm_title">
+              </div>
+      
+              <div class="mb-3">
+                <label for="addCategoryForm_description" class="form-label">Description de la catégorie :</label>
+                <input name ="description" type="text" class="form-control" id="addCategoryForm_description">
+              </div>
+      
+              <div class="mb-3">
+                <label for="addCategoryForm_img_src" class="form-label">Image de la catégorie :</label>
+                <input name ="img_src" type="text" class="form-control" id="addCategoryForm_img_src">
+              </div>
+      
+              <button type="submit" class="btn btn-success">Submit</button>
+            </form>
+          </div>
     
         </div>
         
