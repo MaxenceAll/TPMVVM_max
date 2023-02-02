@@ -14,7 +14,15 @@ export class CategoryController{
         // ddb
         let resp = await fetch("http://localhost:5000/theme");
         const categories = await resp.json();                
-        const category = categories.find(c => c.title.toLowerCase() == this.categoryName);        
+        const category = categories.find(c => c.title.toLowerCase() == this.categoryName);    
+        
+        var titles = {};
+        for (var i = 0; i < categories.length; i++) {
+          titles[categories[i].id] = categories[i].title;
+        }        
+        console.log(titles);
+
+        
 
 
         if (category==undefined){
@@ -26,11 +34,11 @@ export class CategoryController{
             resp = await fetch("http://localhost:5000/product");
             let products = await resp.json();            
             products = products.filter(p => p.theme_id == category.id);
-            
-            //View
-            
+    
+
+            //View            
             const {CategoryView} = await import('../views/CategoryView.js');
-            const view = new CategoryView({category, products});
+            const view = new CategoryView({category, products, categories});
             const content = view.render();
             return content;
         }

@@ -46,7 +46,50 @@ export class App{
             const vm = await controller.execute();
 
             document.getElementById("root").innerHTML = vm;
+
+        // gestion du form de la homeview
+        const form = document.getElementById("addProductForm");
+        form.addEventListener("submit", (event) => {
+          event.preventDefault();
+          const title = form.elements.title.value;
+          const content = form.elements.content.value;
+          const img_src = form.elements.img_src.value;
+          const select = document.querySelector("select");
+          const Id_theme = select.options[select.selectedIndex].value;
+          
+          let body = 
+          {
+            title,
+            content,
+            img_src,
+            Id_theme
+          }
+          console.log("title:", title);
+          console.log("content:", content);
+          console.log("img_src:", img_src);
+          console.log("Id_theme:", Id_theme);
+          console.log("body:", body);
+        
+          const myJSON = JSON.stringify(body);
+          console.log("json:", myJSON);
+        
+          fetch("http://localhost:5000", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: myJSON,
+        })
+          .then((response) => response.json())
+          .then((data) => console.log(data))
+          .catch((error) => console.error(error));
+        
+        });
+
         }
+
+
+
     }
 
 }

@@ -1,6 +1,9 @@
 export class HomeView {
 
-
+    formSubmit(event){
+        event.preventDefault();
+        console.log(event);
+    }
 
 
     render = () =>
@@ -75,6 +78,8 @@ export class HomeView {
     
             </div>
     
-        </div>`
+        </div>
+        
+    `
     }
 }

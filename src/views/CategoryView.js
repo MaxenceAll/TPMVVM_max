@@ -4,9 +4,9 @@ export class CategoryView {
   }
 
   render = () => {
-    const { category, products } = this.models;
+    const { category, products, categories } = this.models;
 
-
+    
 
     const productsCards = products
       .map((product) => {
@@ -32,11 +32,21 @@ export class CategoryView {
       })
       .join("");
 
+    const categoryList = categories
+      .map((cat) => {
+        return `
+        <option value =${cat.id}>${cat.title}</option>
+        `;
+      })
+      .join("");
+
+      
+
     return `
         <div id="CategoryDetailView">
         <link rel="stylesheet" href="../css/CategoryView.css">
 
-          <h1><u>Vous êtes sur la catégorie : ${category.title} </u></h1>
+          <h1><u>Vous êtes sur la vue Categorie: ${category.title} </u></h1>
             <div class="container-fluid">
               <div class="row row-cols-4 justify-content-center">
                   ${productsCards}
@@ -44,6 +54,39 @@ export class CategoryView {
             </div>
         </div>
 
+
+
+
+    <div class="container m-5">
+      <div> <u>Ajout de produit :</u>
+      <form id="addProductForm">
+        <div class="mb-3">
+          <label for="addProduct_title" class="form-label">Nom du produit :</label>
+          <input name ="title" type="text" class="form-control" id="addProduct_title">
+        </div>
+
+        <div class="mb-3">
+          <label for="addProduct_content" class="form-label">Description du produit :</label>
+          <input name ="content" type="text" class="form-control" id="addProduct_content">
+        </div>
+
+        <div class="mb-3">
+          <label for="addProduct_img_src" class="form-label">Image du produit :</label>
+          <input name ="img_src" type="text" class="form-control" id="addProduct_img_src">
+        </div>
+
+        <div class="mb-3">
+          <label for="addProduct_id_theme" class="form-label">Category ? :</label>
+          <select class="form-select" aria-label="Default select example">
+            <option selected>Choisir ici</option>
+            ${categoryList}
+          </select>
+          
+        </div>        
+
+        <button type="submit" class="btn btn-success">Submit</button>
+      </form>
+    </div>
         `;
   };
 
