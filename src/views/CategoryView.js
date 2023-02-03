@@ -26,7 +26,6 @@ export class CategoryView {
               <button type="button" class="btn btn-warning">Voir +</button>          
             </div>
         </div>
-
         
         `;
       })
@@ -54,39 +53,9 @@ export class CategoryView {
             </div>
         </div>
 
+      </div>
 
 
-
-    <div class="container m-5">
-      <div> <u>Ajout de produit :</u>
-      <form id="addProductForm">
-        <div class="mb-3">
-          <label for="addProduct_title" class="form-label">Nom du produit :</label>
-          <input name ="title" type="text" class="form-control" id="addProduct_title">
-        </div>
-
-        <div class="mb-3">
-          <label for="addProduct_content" class="form-label">Description du produit :</label>
-          <input name ="content" type="text" class="form-control" id="addProduct_content">
-        </div>
-
-        <div class="mb-3">
-          <label for="addProduct_img_src" class="form-label">Image du produit :</label>
-          <input name ="img_src" type="text" class="form-control" id="addProduct_img_src">
-        </div>
-
-        <div class="mb-3">
-          <label for="addProduct_id_theme" class="form-label">Category ? :</label>
-          <select class="form-select" aria-label="Default select example">
-            <option selected>Choisir ici</option>
-            ${categoryList}
-          </select>
-          
-        </div>        
-
-        <button type="submit" class="btn btn-success">Submit</button>
-      </form>
-    </div>
         `;
   };
 

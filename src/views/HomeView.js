@@ -48,28 +48,6 @@ export class HomeView {
                 ${categoriesCard}
     
             </div>
-
-        <div class="container m-5">
-            <div> <u>Ajout de catégorie :</u>
-            <form id="addCategoryForm">
-              <div class="mb-3">
-                <label for="addCategoryForm_title" class="form-label">Nom de la catégorie :</label>
-                <input name ="title" type="text" class="form-control" id="addCategoryForm_title">
-              </div>
-      
-              <div class="mb-3">
-                <label for="addCategoryForm_description" class="form-label">Description de la catégorie :</label>
-                <input name ="description" type="text" class="form-control" id="addCategoryForm_description">
-              </div>
-      
-              <div class="mb-3">
-                <label for="addCategoryForm_img_src" class="form-label">Image de la catégorie :</label>
-                <input name ="img_src" type="text" class="form-control" id="addCategoryForm_img_src">
-              </div>
-      
-              <button type="submit" class="btn btn-success">Submit</button>
-            </form>
-          </div>
     
         </div>
         

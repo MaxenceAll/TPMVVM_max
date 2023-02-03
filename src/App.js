@@ -2,12 +2,14 @@ import { CategoryController } from "./controllers/CategoryController";
 import { HomeController } from "./controllers/HomeController";
 import { NotFoundController } from "./controllers/NotFoundController";
 import { ProductController } from "./controllers/ProductController";
+import { DashboardController } from "./controllers/DashboardController";
 
 export class App {
   static controllers = {
     home: HomeController,
     product: ProductController,
     category: CategoryController,
+    dashboard: DashboardController
   };
 
   static start = () => {
@@ -41,10 +43,11 @@ export class App {
 
       document.getElementById("root").innerHTML = vm;
 
-      //si on est sur la vue category
-      if (controllerName == "category") {
-        // gestion du form de la categoryview
-        const form = document.getElementById("addProductForm");
+
+      //si on est sur la vue dashboard
+      if (controllerName == "dashboard") {
+        // gestion du form de la dashboardview
+        const form = document.getElementById("ProductForm");
         form.addEventListener("submit", (event) => {
           event.preventDefault();
           const title = form.elements.title.value;
@@ -84,44 +87,87 @@ export class App {
         });
       }
 
-      //si on est sur la vue category
-      if (controllerName == "home") {
-        // gestion du form de la homeview
-        const form = document.getElementById("addCategoryForm");
-        form.addEventListener("submit", (event) => {
-          event.preventDefault();
-          const title = form.elements.title.value;
-          const description = form.elements.description.value;
-          const img_src = form.elements.img_src.value;
-          const queFaire = "addCategory";
+      // //si on est sur la vue category
+      // if (controllerName == "category") {
+      //   // gestion du form de la categoryview
+      //   const form = document.getElementById("addProductForm");
+      //   form.addEventListener("submit", (event) => {
+      //     event.preventDefault();
+      //     const title = form.elements.title.value;
+      //     const content = form.elements.content.value;
+      //     const img_src = form.elements.img_src.value;
+      //     const select = document.querySelector("select");
+      //     const Id_theme = select.options[select.selectedIndex].value;
+      //     const queFaire = "addProduct";
 
-          let body = {
-            title,
-            description,
-            img_src,   
-            queFaire         
-          };
+      //     let body = {
+      //       title,
+      //       content,
+      //       img_src,
+      //       Id_theme,  
+      //       queFaire          
+      //     };
 
-          console.log("title:", title);
-          console.log("content:", description);
-          console.log("img_src:", img_src);
-          console.log("body:", body);
+      //     console.log("title:", title);
+      //     console.log("content:", content);
+      //     console.log("img_src:", img_src);
+      //     console.log("Id_theme:", Id_theme);
+      //     console.log("body:", body);
 
-          const myJSON = JSON.stringify(body);
-          console.log("json:", myJSON);
+      //     const myJSON = JSON.stringify(body);
+      //     console.log("json:", myJSON);
 
-          fetch("http://localhost:5000", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: myJSON,
-          })
-            .then((response) => response.json())
-            .then((data) => console.log(data))
-            .catch((error) => console.error(error));
-        });
-      }
+      //     fetch("http://localhost:5000", {
+      //       method: "POST",
+      //       headers: {
+      //           "Content-Type": "application/json",
+      //       },
+      //       body: myJSON,
+      //     })
+      //       .then((response) => response.json())
+      //       .then((data) => console.log(data))
+      //       .catch((error) => console.error(error));
+      //   });
+      // }
+
+      // //si on est sur la vue category
+      // if (controllerName == "home") {
+      //   // gestion du form de la homeview
+      //   const form = document.getElementById("addCategoryForm");
+      //   form.addEventListener("submit", (event) => {
+      //     event.preventDefault();
+      //     const title = form.elements.title.value;
+      //     const description = form.elements.description.value;
+      //     const img_src = form.elements.img_src.value;
+      //     const queFaire = "addCategory";
+
+      //     let body = {
+      //       title,
+      //       description,
+      //       img_src,   
+      //       queFaire         
+      //     };
+
+      //     console.log("title:", title);
+      //     console.log("content:", description);
+      //     console.log("img_src:", img_src);
+      //     console.log("body:", body);
+
+      //     const myJSON = JSON.stringify(body);
+      //     console.log("json:", myJSON);
+
+      //     fetch("http://localhost:5000", {
+      //       method: "POST",
+      //       headers: {
+      //           "Content-Type": "application/json",
+      //       },
+      //       body: myJSON,
+      //     })
+      //       .then((response) => response.json())
+      //       .then((data) => console.log(data))
+      //       .catch((error) => console.error(error));
+      //   });
+      // }
     };
   };
 }

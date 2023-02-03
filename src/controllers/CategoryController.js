@@ -33,7 +33,7 @@ export class CategoryController{
         else{            
             resp = await fetch("http://localhost:5000/product");
             let products = await resp.json();            
-            products = products.filter(p => p.theme_id == category.id);
+            products = products.filter(p => p.Id_theme == category.id);
     
 
             //View            
