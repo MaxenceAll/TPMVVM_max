@@ -21,7 +21,7 @@ export class ProductController{
         //via ddb
         resp = await fetch("http://localhost:5000/theme");
         const themes = await resp.json();
-        const theme = themes.find(t => t.id == product.theme_id);
+        const theme = themes.find(t => t.id == product.Id_theme);
 
 
         //View

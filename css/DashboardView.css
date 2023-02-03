@@ -1,3 +1,14 @@
+.card{
+    background-color: rgba(172, 172, 172, 0.652);
+}
+.card p{
+    color: white;
+    height: 20vh;
+}
+.card:hover{
+    cursor: pointer;
+}
+
 @import 'https://fonts.googleapis.com/css?family=Inconsolata';
 
 html {
@@ -6,7 +17,7 @@ html {
 
 body {
   box-sizing: border-box;
-  height: 100%;
+  /* height: 100%; */
   background-color: #000000;
   background-image: radial-gradient(#11581E, #041607), url("https://media.giphy.com/media/oEI9uBYSzLpBK/giphy.gif");
   background-repeat: no-repeat;
@@ -73,37 +84,3 @@ body {
     35%, 100% { background-position: 0 100vh; }
   }
 
-
-
-.row{
-    padding-left: 1.5%;
-}
-
-.card{
-    background-color: rgba(172, 172, 172, 0.652);
-    transition: transform .5s ease;
-    overflow: hidden;
-}
-.card:hover{
-  cursor: pointer; 
-}
-.card img {
-  width: 100%;
-  height: 100%;
-  transform: scale(1.5); 
-}
-
-h1{
-    text-align: center;
-    padding: 2%;
-}
-
-.card-header{
-  width: 100%;
-  height: 200px;
-  overflow: hidden;
-}
-.card-header img:hover{
-  transform: scale(2.5);
-  transition: transform .8s;
-}

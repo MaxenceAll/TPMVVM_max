@@ -31,6 +31,7 @@ export class DashboardController{
         const {DashboardView} = await import('../views/DashboardView.js');
         const view = new DashboardView({categories, titles_theme, products, titles_product});
         const content = view.render();
+
         return content;
 
     }

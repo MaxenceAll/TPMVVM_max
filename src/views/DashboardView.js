@@ -2,14 +2,11 @@ export class DashboardView {
     constructor(models) {
       this.models = models;
     }
-
-
-    
   
     render = () => {
       const { categories, titles_theme, products, titles_product } = this.models;
 
-
+   
       const categoryList = categories
       .map((cat) => {
         return `
@@ -29,12 +26,10 @@ export class DashboardView {
 
       return `
         
-      <div id="HomeView">
+      <div id="Dashboard">
 
-      <div class="noise"></div>
-      <div class="overlay"></div>
 
-      <link rel="stylesheet" href="../css/HomeView.css">
+      <link rel="stylesheet" href="../css/DashboardView.css">
   
       <h1 class="p-5 text-center">Bienvenue sur la page de gestion !</h1>
    
@@ -53,43 +48,70 @@ export class DashboardView {
         <div class="tab-pane fade show active" id="products-tab" role="tabpanel" aria-labelledby="product-tab" tabindex="0">
 
 
-              <div class="container m-5">
-              <div> <u>Ajout/Modification/Suppression de produit :</u>
-              <form id="ProductForm">
-              <div class="mb-3">
-              <label for="Product_title" class="form-label">Nom du produit :</label>
-              <input name ="title" type="text" class="form-control" id="Product_title">
-              </div>
-              <div class="mb-3">
-              <label for="addProduct_content" class="form-label">Description du produit :</label>
-              <input name ="content" type="text-box" class="form-control" id="addProduct_content">
-              </div>
-              <div class="mb-3">
-              <label for="addProduct_img_src" class="form-label">Image du produit :</label>
-              <input name ="img_src" type="text" class="form-control" id="addProduct_img_src">
-              </div>
-              <div class="mb-3">
-              <label for="addProduct_id_theme" class="form-label">Category ? :</label>
-              <select class="form-select">
-              <option selected>Choisir ici</option>
-              ${categoryList}
-              </select>
-              </div>
+                  <div class="container m-5">
+                      <form id="ProductForm">
+                          <div class="mb-5"> <u>Ajout/Modification/Suppression de produit :</u>
 
-              <div class="mb-3">
-              <label for="listProduct-option" class="form-label">Liste des produits actuellement :</label>
-              <select class="form-select">
-              <option selected>Choisir ici</option>
-              ${productList}
-              </select>
-              </div>   
 
-              <button type="submit" class="btn btn-success" name="add-product-submit">Ajouter</button>
-              <button type="submit" class="btn btn-success" name="modif-product-submit">Modifier</button>
-              <button type="submit" class="btn btn-success" name="supp-product-submit">Supprimer</button>
-              <button type="submit" class="btn btn-success" name="del-product-submit">Effacer pour toujours !</button>
-              </form>
-              </div>
+                              <div class="input-group mb-3 mt-3">
+                                  <label class="input-group-text w-25" for="input-products-select">Produits disponibles :</label>
+                                  <select class="form-select" id="input-products-select">
+                                    <option selected>Voir...</option>
+                                    ${productList}
+                                  </select>
+                              </div>
+                  
+                              <label class="form-label">Données du produit :</label>
+
+                              <div class="mb-3">
+                                  <div class="input-group">
+                                    <span class="input-group-text w-25">Nom du produit :</span>
+                                    <textarea class="form-control" aria-label="With textarea" placeholder="Saisir le nom du produit."></textarea>
+                                  </div>
+                              </div>
+
+                              <div class="mb-3">
+                                  <div class="input-group">
+                                    <span class="input-group-text w-25">Description :</span>
+                                    <textarea class="form-control" aria-label="With textarea" placeholder="Saisir la description produit."></textarea>
+                                  </div>
+                              </div>
+
+                              <div class="mb-3">
+                                  <div class="input-group">
+                                    <span class="input-group-text w-25">Image :</span>
+                                    <textarea class="form-control" aria-label="With textarea" placeholder="Saisir l'URL de l'image'."></textarea>
+                                  </div>
+                              </div>
+
+                              <div class="input-group mb-3 mt-3">
+                                  <label class="input-group-text w-25" for="inputGroupSelect01">Categories disponibles :</label>
+                                    <select class="form-select" id="inputGroupSelect01">
+                                      <option selected>Voir...</option>
+                                      ${categoryList}
+                                    </select>
+                              </div>                                    
+                              
+                              <div class="mb-3">
+                                  <div class="input-group">
+                                    <span class="input-group-text w-25">Image :</span>
+                                    <textarea class="form-control" aria-label="With textarea" placeholder="Saisir l'URL de l'image'."></textarea>
+                                  </div>
+                              </div>
+
+                              <div class="mb-3">
+                                <div class="input-group">
+                                  <span class="input-group-text w-25">Id(readonly) :</span>
+                                  <textarea class="form-control" readonly aria-label="With textarea" placeholder="id here"></textarea>
+                                </div>
+                              </div>
+                  
+                              <button type="submit" class="btn btn-success" name="add-product-submit">Ajouter</button>
+                              <button type="submit" class="btn btn-success" name="modif-product-submit">Modifier</button>
+                              <button type="submit" class="btn btn-success" name="supp-product-submit">Supprimer</button>
+                              <button type="submit" class="btn btn-success" name="del-product-submit">Effacer pour toujours !</button>
+                      </form>
+                  </div>
 
         </div>
 

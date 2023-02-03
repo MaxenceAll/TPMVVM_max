@@ -14,9 +14,9 @@ export class CategoryView {
 
 
         <div class="card p-0 m-2" onclick="location.href='/product/${product.id}'">
-
-            <img src="${product.img_src}" class="w-100" alt=${product.title}">
-
+            <div class="card-header">
+              <img src="${product.img_src}" class="w-100" alt=${product.title}">
+            </div>
             <div class="card-body">
               <h5 class="card-title fw-bold text-decoration-underline">${product.title}</h5>
               <h6 class="card-text">${product.content.substring(0,50)}...</h6>
