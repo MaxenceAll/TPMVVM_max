@@ -41,7 +41,7 @@ export class CategoryView {
 
       
 
-    return `
+    const content = `
         <div id="CategoryDetailView">
         <link rel="stylesheet" href="../css/CategoryView.css">
 
@@ -57,6 +57,9 @@ export class CategoryView {
 
 
         `;
+    const view = document.createElement('div');
+    view.innerHTML = content;
+    return view;
   };
 
 }

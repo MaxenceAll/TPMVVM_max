@@ -10,7 +10,7 @@ export class ProductView {
     
 
     
-    return this.product 
+    const content =  this.product 
     ?
         `
         <div id="ProductDetailView">
@@ -39,5 +39,9 @@ export class ProductView {
             <link rel="stylesheet" href="../css/ProductView.css">
             <div class="text-center">Ce produit n'existe pas ! </div>
         `;
+
+    const view = document.createElement('div');
+    view.innerHTML = content;
+    return view;
     };
 }

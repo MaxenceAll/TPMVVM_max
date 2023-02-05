@@ -32,7 +32,7 @@ export class HomeView {
 
 
 
-        return `
+        const content =  `
         
         <div id="HomeView">
 
@@ -52,5 +52,10 @@ export class HomeView {
         </div>
         
     `
+
+
+    const view = document.createElement('div');
+    view.innerHTML = content;
+    return view;
     }
 }

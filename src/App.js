@@ -42,19 +42,21 @@ export class App {
       const vm = await controller.execute();
 
       document.getElementById("root").innerHTML = vm;
+      document.getElementById("root").prepend(vm);
 
 
       //si on est sur la vue dashboard
       if (controllerName == "dashboard")
       {
-        const form = document.getElementById("ProductForm");      
-
-
-
-        let productSelector = document.getElementById("input-products-select");
-        productSelector.addEventListener('change', function (e) {
-          alert('changed');
-        });
+        // const form = document.getElementById("ProductForm");   
+        // let productSelector = document.getElementById("input-products-select");
+        // if (productSelector.selectedIndex >= 0) {
+        //   const selectedOption = productSelector.options[productSelector.selectedIndex].text;
+        //   console.log(selectedOption);
+        // }
+        // productSelector.addEventListener('change', function (e) {
+        //   alert('changed');
+        // });
       }
 
       // //si on est sur la vue category
