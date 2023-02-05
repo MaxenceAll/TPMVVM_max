@@ -104,7 +104,10 @@ export class DashboardView {
                                   <span class="close">&times;</span>
                                   <p>Vous avez ajouté avec success :</p>
                                   <hr>
-                                  <p><p>
+                                  <p id="modal_title_produit"><u>Nom du produit ajouté :  </u></p>
+                                  <p id="modal_content_produit"><u>Description du produit ajouté :  </u></p>
+                                  <p id="modal_Id_theme_produit"><u>Il est dans la catégorie  :  </u></p>
+                                  <p id="modal_img_src_produit"><u>URL image du produit ajouté :  </u></p> 
                                 </div>
                               </div>
                   
@@ -221,7 +224,6 @@ export class DashboardView {
       }
      });
 
-
         form.addEventListener("submit", (event) => {
           event.preventDefault();
         
@@ -268,6 +270,10 @@ export class DashboardView {
                   }
                 });
 
+                view.querySelector("#modal_title_produit").innerHTML += body.title;
+                view.querySelector("#modal_content_produit").innerHTML += body.content;
+                view.querySelector("#modal_Id_theme_produit").innerHTML += body.Id_theme;
+                view.querySelector("#modal_img_src_produit").innerHTML += body.img_src;                
 
           } else if (clickedButton.name === "btn_modifier") {
             console.log("Modif btn clicked !")
